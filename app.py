@@ -20,4 +20,5 @@ def recommend():
     return jsonify({'role': role, 'recommendations': courses})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))  # default fallback
+    app.run(host='0.0.0.0', port=port)
